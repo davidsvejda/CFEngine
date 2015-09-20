@@ -10,8 +10,9 @@ meta:
   "tags" slist => { "autorun" };
 
 packages:
+
   "git"
-    policy => "present",
-    version => "*";
+    ipackage_policy => "addupdate",
+    package_method  => apt;
 
 }
