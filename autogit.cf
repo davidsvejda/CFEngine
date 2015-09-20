@@ -12,7 +12,7 @@ meta:
 packages:
 
   "git"
-    ipackage_policy => "addupdate",
+    package_policy => "addupdate",
     package_method  => apt;
 
 }
