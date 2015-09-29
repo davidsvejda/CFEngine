@@ -7,8 +7,12 @@ bundle agent motd
     "motd" string => "This system is managed CFEngine 3";
  
   files:
-    "/etc/motd", "/etc/issue", "/etc/issue.net",
-    create => "true";
+    "/etc/motd",
+      create => "true",
+    "/etc/issue",
+      create => "true",
+    "/etc/issue.net",
+      create => "true";
 
   reports:
     "Motd is about to be modified";
