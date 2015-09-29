@@ -1,6 +1,6 @@
 bundle agent motd
 {
-  method:
+  methods:
     "Modify the motd, issue and issue.net" usebundle => edit_motd;
 
   vars:
