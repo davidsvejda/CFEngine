@@ -1,7 +1,8 @@
 bundle edit_line edit_motd
 {
   insert_lines:
-   $(motd)  
+   "Welcom on $(sys.fqhost)
+This system is managed by CFEngine 3"  
 
   reports:
     "Motd modified";
