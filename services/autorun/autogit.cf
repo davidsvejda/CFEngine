@@ -1,0 +1,18 @@
+###############################################################################
+#
+#   autogit.cf - autorun policy for initial git install
+#
+###############################################################################
+
+bundle agent autogit
+{
+meta:
+  "tags" slist => { "autorun" };
+
+packages:
+
+  "git"
+    package_policy => "addupdate",
+    package_method  => apt;
+
+}
