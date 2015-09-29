@@ -1,0 +1,10 @@
+bundle agent os_common
+{
+  vars:
+  "JohnDoe" string => "John Doe was here";
+ 
+  files:
+    "/tmp/foo"
+    create => "true"
+    edit_line 
+} 

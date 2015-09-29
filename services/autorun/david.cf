@@ -1,0 +1,14 @@
+bundle agent david
+{
+  meta:
+    "tags" slist => { "autorun" }
+
+  methods:
+    "Hook for the platform specific policies" usebundle => platform;
+
+  reports:
+    "platform: $(platform.os)";
+
+}
+
+ 

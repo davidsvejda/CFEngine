@@ -1,0 +1,5 @@
+bundle agent platform
+{
+  methods:
+    "Common OS stuff" usebundle => os_common; 
+} 
