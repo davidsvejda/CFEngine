@@ -7,7 +7,7 @@ bundle agent david
     "Hook for the platform specific policies" usebundle => platform;
 
   reports:
-    "platform: $(platform.os)";
+    "platform: $(sys.flavor)";
 
 }
 
