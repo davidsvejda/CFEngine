@@ -5,6 +5,8 @@ bundle agent os_common
  
   files:
     "/tmp/foo"
-    create => "true"
-    edit_line 
+    create => "true";
+
+  reports:
+    "foo file was created in /tmp";
 } 

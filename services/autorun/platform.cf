@@ -1,5 +1,8 @@
 bundle agent platform
 {
   methods:
-    "Common OS stuff" usebundle => os_common; 
+    "Common OS stuff" usebundle => os_common;
+
+  reports:
+    "Common policy for OS"; 
 } 
