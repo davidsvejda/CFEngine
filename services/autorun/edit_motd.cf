@@ -1,0 +1,10 @@
+bundle edit_line edit_motd
+{
+  insert_lines:
+   $(motd)  
+
+  reports:
+    "Motd modified";
+} 
+
+

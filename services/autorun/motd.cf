@@ -1,0 +1,17 @@
+bundle agent motd
+{
+  method:
+    "Modify the motd, issue and issue.net" usebundle => edit_motd;
+
+  vars:
+    "motd" string => "This system is managed CFEngine 3";
+ 
+  files:
+    inputs => ( "/etc/motd", "/etc/issue", "/etc/issue.net" );
+    create => "true";
+
+  reports:
+    "Motd is about to be modified";
+} 
+
+

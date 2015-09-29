@@ -2,6 +2,7 @@ bundle agent platform
 {
   methods:
     "Common OS stuff" usebundle => os_common;
+    "motd, issue and issue.net" usebundle => motd;
 
   reports:
     "Common policy for OS"; 
