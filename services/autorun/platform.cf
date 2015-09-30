@@ -1,8 +1,9 @@
 bundle agent platform
 {
   methods:
-    "Common OS stuff" usebundle => os_common;
+    "/tmp/foo stuff" usebundle => foo;
     "motd, issue and issue.net" usebundle => motd;
+    "Platform repositories" usebundle => repositories;
 
   reports:
     "Common policy for OS"; 
