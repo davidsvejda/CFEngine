@@ -19,12 +19,18 @@ bundle agent repositories
 
 bundle edit_line edit_apt_repo_proxy
 {
+  delete_lines:
+    ".*";
+
   insert_lines:
-      'Acquire::http::Proxy "$(repo_url)";'
+    'Acquire::http::Proxy "$(repo_url)";'
 }
 
 bundle edit_line edit_yum_repo_proxy
 {
+  delete_lines:
+    ".*";
+
   insert_lines:
      "# Modified by CFEngine
 [main]
