@@ -1,7 +1,7 @@
 bundle agent repositories
 {
   vars:
-     "rep_url"		string => "http://aptutl01.webhuis.nl:3142/"
+     "repo_url"		string => "http://aptutl01.webhuis.nl:3142/"
   
   files:
     centos_6::
