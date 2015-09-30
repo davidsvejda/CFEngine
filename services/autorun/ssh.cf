@@ -8,5 +8,5 @@ bundle agent ssh
     "pkg[openssh-clients]	=> string "*";
 
   methods:
-    "Call packages bundle and send the array of packages and their versions to be installed" usebundle => packages("ssh.pkg");
+    "Call packages bundle" usebundle => packages("ssh.pkg");
 }
