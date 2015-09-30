@@ -4,8 +4,7 @@ bundle agent platform
     "/tmp/foo stuff" usebundle => foo;
     "motd, issue and issue.net" usebundle => motd;
     "Platform repositories" usebundle => repositories;
-    "Packages installation" usebundle => packages;
-    "ssh" usebundle => ssh;
+    "OS common packages" usebundle => os_common_packages;
 
   reports:
     "Common policy for company"; 

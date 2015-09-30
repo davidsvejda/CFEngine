@@ -1,11 +1,15 @@
-bundle agent ssh
+bundle agent os_common_packages
 {
   vars:
     debian::
     "pkg[openssh-server]	=> string "*";
+    "pkg[less]			=> string "*";
+    "pkg[vim]			=> string "*";
 
     centos_6::
     "pkg[openssh-clients]	=> string "*";
+    "pkg[less]			=> string "*";
+    "pkg[lynx]			=> string "*";
 
   methods:
     "Call packages bundle" usebundle => packages("ssh.pkg");
