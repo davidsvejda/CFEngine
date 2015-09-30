@@ -1,0 +1,18 @@
+bundle agent packages
+{
+  packages:
+    centos_6::
+      "openssh-server openssh-clients lynx less vim"
+      package_policy => "addupdate",
+      package_method  => yum;    
+  
+    debian::
+      "openssh-server lynx less vim"
+      package_policy => "addupdate",
+      package_method  => apt; 
+		
+  reports:
+    "Packages installed";
+} 
+
+ 
