@@ -10,14 +10,14 @@ bundle agent repositories
 
     debian::
       "/etc/apt/apt.conf"
-      edit_line	=> edit_apt_repo_proxy; 
+      edit_line	=> edit_apt_repo_proxy (repo_url); 
 
 		
   reports:
     "Package repository configuration updated";
 } 
 
-bundle edit_line edit_apt_repo_proxy
+bundle edit_line edit_apt_repo_proxy (repo_url)
 {
   delete_lines:
     ".*";
