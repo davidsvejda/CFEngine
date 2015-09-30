@@ -6,18 +6,18 @@ bundle agent repositories
   files:
     centos_6::
       "/etc/yum.conf"
-      edit_line => edit_yum_repo_proxy;      
+      edit_line => edit_yum_repo_proxyi($(repo_url));      
 
     debian::
       "/etc/apt/apt.conf"
-      edit_line	=> edit_apt_repo_proxy (repo_url); 
+      edit_line	=> edit_apt_repo_proxy($(repo_url)); 
 
 		
   reports:
     "Package repository configuration updated";
 } 
 
-bundle edit_line edit_apt_repo_proxy (repo_url)
+bundle edit_line edit_apt_repo_proxy($(repo_url))
 {
   delete_lines:
     ".*";
@@ -26,7 +26,7 @@ bundle edit_line edit_apt_repo_proxy (repo_url)
     'Acquire::http::Proxy "$(repo_url)";';
 }
 
-bundle edit_line edit_yum_repo_proxy
+bundle edit_line edit_yum_repo_proxy($(repo_url))
 {
   delete_lines:
     ".*";
