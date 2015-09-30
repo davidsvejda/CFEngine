@@ -5,7 +5,8 @@ bundle agent platform
     "motd, issue and issue.net" usebundle => motd;
     "Platform repositories" usebundle => repositories;
     "Packages installation" usebundle => packages;
+    "ssh" usebundle => ssh;
 
   reports:
-    "Common policy for OS"; 
+    "Common policy for company"; 
 } 

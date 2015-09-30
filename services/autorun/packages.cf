@@ -1,18 +1,24 @@
-bundle agent packages
+bundle agent packages (expect_two_dimensional_array_here)
 {
+
+  vars:
+  "package_name"         slist => getindices("$(pkgs_array)");
+
+
   packages:
     centos_6::
-      "openssh-server openssh-clients lynx less vim"
+      "$(package_name)"
       package_policy => "addupdate",
       package_method  => yum;    
   
     debian::
-      "openssh-server lynx less vim"
-      package_policy => "addupdate",
-      package_method  => apt; 
+      "$(package_name)"
+       package_policy             => "addupdate",
+       package_method             => apt,
+       package_version            => "$($(pkgs_array)[$(package_name)])";
+
 		
   reports:
     "Packages installed";
 } 
-
  
