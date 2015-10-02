@@ -2,16 +2,16 @@ bundle agent os_common_packages
 {
   vars:
     debian::
-    "pkg[openssh-server]	string => "*";
-    "pkg[less]			string => "*";
-    "pkg[lynx]			string => "*";
-    "pkg[vim]			string => "*";
+    "pkg[openssh-server]"	string => "*";
+    "pkg[less]"			string => "*";
+    "pkg[lynx]"			string => "*";
+    "pkg[vim]"			string => "*";
 
     centos_6::
-    "pkg[openssh-clients]	string => "*";
-    "pkg[less]			string => "*";
-    "pkg[lynx]			string => "*";
-    "pkg[vim]			string => "*";
+    "pkg[openssh-clients]"	string => "*";
+    "pkg[less]"			string => "*";
+    "pkg[lynx]"			string => "*";
+    "pkg[vim]"			string => "*";
 
   methods:
     "Call packages bundle" usebundle => packages("os_common_packages.pkg");
