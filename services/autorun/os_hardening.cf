@@ -16,10 +16,10 @@ bundle agent os_hardening
         classes => if_ok("ok_sshd");
 
   commands:
-    debian::
+    restart_sshd.debian::
       "/etc/init.d/ssh restart";
-      
-    centos_6::
+
+    restart_sshd.centos_6::  
       "/usr/bin/service ssh restart";
 
   reports:
