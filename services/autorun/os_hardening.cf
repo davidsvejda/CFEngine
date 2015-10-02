@@ -27,5 +27,5 @@ bundle agent os_hardening
      "Bundle name: $(this.bundle) has modified: $(sshd_config_file) and restarted sshd";
 
    ok_sshd::
-     "Bundle name: $(this.bundle) hasn't touch sshd configuration"
+     "Bundle name: $(this.bundle) hasn't touch sshd configuration";
 }
