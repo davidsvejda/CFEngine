@@ -17,7 +17,7 @@ bundle agent os_hardening
 
   commands:
     debian::
-      "/etc/init.d/sshd restart";
+      "/etc/init.d/ssh restart";
       
     centos_6::
       "/usr/bin/service ssh restart";
