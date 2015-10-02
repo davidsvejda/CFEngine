@@ -9,7 +9,7 @@ bundle agent os_hardening
   files:
     any::
       "/etc/ssh/sshd_config"
-        perms => mode("0640");
+        perms => mode("0640"),
         edit_line => set_config_values("sshd_config");
 }
 
