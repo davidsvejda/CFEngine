@@ -16,7 +16,7 @@ bundle agent packages (pkg_array)
       "$(package_name)"
        package_policy             => "addupdate",
        package_method             => apt,
-       package_version            => "$($(pkgs_array)[$(package_name)])";
+       package_version            => "$($(pkg_array)[$(package_name)])";
 
 		
   reports:
