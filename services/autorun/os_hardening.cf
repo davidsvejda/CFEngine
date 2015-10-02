@@ -23,9 +23,14 @@ bundle agent os_hardening
       "/usr/bin/service ssh restart";
 
   reports:
-    restart_sshd:: 
-     "Bundle name: $(this.bundle) has modified: $(sshd_config_file) and restarted sshd";
+    #restart_sshd:: 
+    # "Bundle name: $(this.bundle) has modified: $(sshd_config_file) and restarted sshd";
+    debian::
+      "Debian stuff";
+   
+   # ok_sshd::
+   #  "Bundle name: $(this.bundle) hasn't touch sshd configuration";
 
-   ok_sshd::
-     "Bundle name: $(this.bundle) hasn't touch sshd configuration";
+    centos_6::
+      "CentOS stuff...";
 }
