@@ -11,7 +11,7 @@ bundle agent os_hardening
     any::
       "$(file)"
 	perms => mog("0640", "root", "root"),      
-        edit_line => set_config_values("sshd_config");
+        edit_line => set_config_values("os_hardening.sshd_config");
 
   reports:
    'Bundle name: $(this.bundle) has modified: "$(file)"';
