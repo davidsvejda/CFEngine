@@ -2,18 +2,30 @@ bundle agent os_hardening
 {
   vars:
     any::
-      "file"				string => "/etc/ssh/sshd_config";
+      "sshd_config_file"		string => "/etc/ssh/sshd_config";
       "sshd_config[Protocol]" 		string => "2";
       "sshd_config[PermitRootLogin]" 	string => "no";
       "sshd_config[LogLevel]" 		string => "DEBUG";
 
   files:
     any::
-      "$(file)"
+      "$(sshd_config_file)"
 	perms => mog("0640", "root", "root"),      
-        edit_line => set_config_values("os_hardening.sshd_config");
+        edit_line => set_config_values("os_hardening.sshd_config"),
+        classes => if_repaired("restart_sshd"),
+        classes => if_ok("ok_sshd");
+
+  commands:
+    debian::
+      "/etc/init.d/sshd restart";
+      
+    centos_6::
+      "/usr/bin/service ssh restart";
 
   reports:
-   'Bundle name: $(this.bundle) has modified: "$(file)"';
-}
+    restart_sshd:: 
+     "Bundle name: $(this.bundle) has modified: $(sshd_config_file) and restarted sshd";
 
+   ok_sshd::
+     "Bundle name: $(this.bundle) hasn't touch sshd configuration"
+}
