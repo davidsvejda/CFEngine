@@ -5,6 +5,7 @@ bundle agent platform
     "motd, issue and issue.net" usebundle => motd;
     "Platform repositories" usebundle => repositories;
     "OS common packages" usebundle => os_common_packages;
+    "OS hardening" usebundle => os_hardening;
 
   reports:
     "Common policy for company"; 
