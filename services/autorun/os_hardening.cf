@@ -14,6 +14,6 @@ bundle agent os_hardening
         edit_line => set_config_values("sshd_config");
 
   reports:
-   '$(this.bundle) modify: "$(file)";
+   '$(this.bundle) modify: "$(file)"';
 }
 
