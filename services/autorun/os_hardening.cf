@@ -2,13 +2,13 @@ bundle agent os_hardening
 {
   vars:
     any::
-      "sshd_config[PermitRootLogin]"	=> string "no";
-      "sshd_config[LogLevel]"		=> string "DEBUG";
+      "sshd_config[PermitRootLogin]" => string "no";
+      "sshd_config[LogLevel]" => string "DEBUG";
 
   files:
     any::
       "/etc/ssh/sshd_config"
-        perms 		=> mode("0640");
-        edit_line 	=> set_config_values("sshd_config");
+        perms => mode("0640");
+        edit_line => set_config_values("sshd_config");
 }
 
