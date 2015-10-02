@@ -2,8 +2,9 @@ bundle agent os_hardening
 {
   vars:
     any::
-      "sshd_config[PermitRootLogin]" => string "no";
-      "sshd_config[LogLevel]" => string "DEBUG";
+      "sshd_config[Protocol]" 		string => "2";
+      "sshd_config[PermitRootLogin]" 	string => "no";
+      "sshd_config[LogLevel]" 		string => "DEBUG";
 
   files:
     any::
