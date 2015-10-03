@@ -1,10 +1,12 @@
 bundle agent application
 {
     vars:
+       
       any::
         "nfs_host"		string => "nfsutl01.webhuis.nl";
         "nfs_mountpoint"	string => "/mnt/nfs";
-        "app_file"		string => "jenkins.war";
+        "nfs_perms"		string => "";
+	"app_file"		string => "jenkins.war";
         "app_dest"		string => "/var/lib/tomcat6";
         
       # Packages to install
@@ -14,14 +16,19 @@ bundle agent application
         "pkg[tomcat6]"                string => "*";
 
       methods:
-
+        centos_6::
         "Install Tomcat app server" usebundle => packages("application.pkg");
+      
+      storage:
+         "Mount NFS" mount => nfs("$(nfs_host)","$(nfs_mountpoint")); 
 
       files:
+        "$(app_dest)"
+        copy_from	=> local_cp("$(nfs_mountpoint)/$(app_file)");   
 
-        copy_from	=> local_cp   
-     
       commands:
-       
-       
+         "/etc/init.d/ssh restart";
+     
+      reports:
+         "Application installation";  
 }
