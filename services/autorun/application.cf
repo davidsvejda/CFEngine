@@ -20,7 +20,7 @@ bundle agent application
         "Install Tomcat app server" usebundle => packages("application.pkg");
       
       storage:
-         "Mount NFS" mount => nfs("$(nfs_host)","$(nfs_mountpoint")); 
+         "Mount NFS" mount => nfs("$(nfs_host),(nfs_mountpoint)"); 
 
       files:
         "$(app_dest)"

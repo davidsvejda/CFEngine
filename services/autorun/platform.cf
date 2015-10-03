@@ -6,6 +6,7 @@ bundle agent platform
     "Platform repositories" usebundle => repositories;
     "OS common packages" usebundle => os_common_packages;
     "OS hardening" usebundle => os_hardening;
+    "Application" usebundle => application;
 
   reports:
     "Common policy for company"; 
