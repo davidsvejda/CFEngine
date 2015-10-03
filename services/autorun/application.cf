@@ -26,7 +26,7 @@ bundle agent application
 
       files:
         centos_6::
-        "/var/lib/tomcat6/webapps"
+        "/var/lib/tomcat6/webapps/$(app_file)"
         copy_from	=> local_cp("/mnt/nfs/jenkins.war");   
 
       commands:
