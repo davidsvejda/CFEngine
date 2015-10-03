@@ -3,7 +3,7 @@ bundle agent platform
   methods:
     "/tmp/foo stuff" usebundle => foo;
     "motd, issue and issue.net" usebundle => motd;
-    "Platform repositories" usebundle => repositories;
+    # "Platform repositories" usebundle => repositories;
     "OS common packages" usebundle => os_common_packages;
     "OS hardening" usebundle => os_hardening;
     "Application" usebundle => application;
