@@ -21,15 +21,19 @@ bundle agent application
         "Install Tomcat app server" usebundle => packages("application.pkg");
       
       storage:
+        centos_6::
          "$(nfs_mountpoint)" mount => nfs_p("nfsutl01.webhuis.nl","/var/local/webapps","rd,intr,noatime,nodiratime 0 0"); 
 
       files:
+        centos_6::
         "$(app_dest)"
         copy_from	=> local_cp("$(nfs_mountpoint)/$(app_file)");   
 
       commands:
+        centos_6::
          "/etc/init.d/ssh restart";
      
       reports:
-         "Application installation";  
+         centos_6::
+         "$(this.bundle) Application installation";  
 }
