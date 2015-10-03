@@ -21,7 +21,7 @@ bundle agent application
         "Install Tomcat app server" usebundle => packages("application.pkg");
       
       storage:
-         "$(nfs_mountpoint)" mount => nfs_p("$(nfs_host),$(nfs_source),$(nfs_perms)"); 
+         "$(nfs_mountpoint)" mount => nfs_p("nfsutl01.webhuis.nl","/var/local/webapps","rd,intr,noatime,nodiratime 0 0"); 
 
       files:
         "$(app_dest)"
