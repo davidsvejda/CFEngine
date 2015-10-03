@@ -22,7 +22,7 @@ bundle agent application
       
       storage:
         centos_6::
-         "$(nfs_mountpoint)" mount => nfs_p("nfsutl01.webhuis.nl","/var/local/webapps","rd,intr,noatime,nodiratime 0 0"); 
+         "/mnt/nfs" mount => nfs("nfsutl01.webhuis.nl","/var/local/webapps"); 
 
       files:
         centos_6::
@@ -31,7 +31,7 @@ bundle agent application
 
       commands:
         centos_6::
-         "/etc/init.d/ssh restart";
+         "/etc/init.d/tomcat6 restart";
      
       reports:
          centos_6::
