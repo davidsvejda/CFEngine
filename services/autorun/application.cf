@@ -4,8 +4,9 @@ bundle agent application
        
       any::
         "nfs_host"		string => "nfsutl01.webhuis.nl";
+        "nfs_source"		string => "/var/local/webapps";
         "nfs_mountpoint"	string => "/mnt/nfs";
-        "nfs_perms"		string => "";
+        "nfs_perms"		string => "rd,intr,noatime,nodiratime 0 0";
 	"app_file"		string => "jenkins.war";
         "app_dest"		string => "/var/lib/tomcat6";
         
@@ -20,7 +21,7 @@ bundle agent application
         "Install Tomcat app server" usebundle => packages("application.pkg");
       
       storage:
-         "Mount NFS" mount => nfs("$(nfs_host),(nfs_mountpoint)"); 
+         "$(nfs_mountpoint)" mount => nfs_p("$(nfs_host),$(nfs_source),$(nfs_perms)"); 
 
       files:
         "$(app_dest)"
