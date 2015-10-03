@@ -8,7 +8,7 @@ bundle agent application
         "nfs_mountpoint"	string => "/mnt/nfs";
         "nfs_perms"		string => "rd,intr,noatime,nodiratime 0 0";
 	"app_file"		string => "jenkins.war";
-        "app_dest"		string => "/var/lib/tomcat6";
+        "app_dest"		string => "/var/lib/tomcat6/webapps";
         
       # Packages to install
       centos_6::
